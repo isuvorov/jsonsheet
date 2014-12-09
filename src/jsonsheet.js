@@ -13,10 +13,9 @@
    */
   jsonsheet.raw2Array = function (raw) {
     var rows = raw.split("\n");
-    var data = rows.map(function (row) {
+    return rows.map(function (row) {
       return row.split("\t");
     });
-    return data;
   };
 
   /**
@@ -96,7 +95,7 @@
     //console.log('tableArray', tableArray);
     return tableArray;
 
-  }
+  };
 
   /**
    * cast type of element
@@ -132,7 +131,7 @@
         if (!params.keys[header[i]]) {
           continue;
         }
-        row[i] = typeCast(row[i], params.keys[header[i]].type);
+        row[i] = jsonsheet.typeCast(row[i], params.keys[header[i]].type);
       }
       newArray.push(row);
     });
@@ -151,9 +150,9 @@
     var otherArray = array.slice(1);
 
     console.log('otherArray', otherArray);
-    var otherArray = jsonsheet.applyArrayParams(otherArray, params);
-    console.log('otherArray', otherArray);
-    var tableArray = jsonsheet.array2tableArray(otherArray);
+    var otherArray2 = jsonsheet.applyArrayParams(otherArray, params);
+    console.log('otherArray', otherArray2);
+    var tableArray = jsonsheet.array2tableArray(otherArray2, true);
 
     console.log('tableArray', tableArray);
 
