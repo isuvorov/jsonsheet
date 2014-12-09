@@ -1,0 +1,6 @@
+{
+  "name": "jsonsheet",
+  "version": "1.0.0",
+  "main": "jsonsheet.js",
+  "keywords": ["util", "functional", "server", "client", "google speadsheet", "speadsheet", "json", "backend"]
+}
